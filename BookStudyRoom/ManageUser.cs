@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 namespace BookStudyRoom
 {
     public partial class ManageUser : Form
-    {
+    {        
         SqlConnection conn;
         public ManageUser()
         {
@@ -35,7 +35,7 @@ namespace BookStudyRoom
                 txtId.Text = dataGrid1.SelectedRows[0].Cells[0].Value.ToString();
                 txtName.Text = dataGrid1.SelectedRows[0].Cells[1].Value.ToString();
                 txtLogin.Text = dataGrid1.SelectedRows[0].Cells[2].Value.ToString();
-                txtPhone.Text = dataGrid1.SelectedRows[0].Cells[3].Value.ToString();
+                txtPhone.Text = dataGrid1.SelectedRows[0].Cells[3].Value.ToString();                
             }
             else
             {
@@ -110,7 +110,8 @@ namespace BookStudyRoom
                         {
                             if (txtPswd.Text == txtCPswd.Text)
                             {
-                                if (!checkLoginExist())
+
+                                if ((!checkLoginExist()) || (!add))
                                 {
                                     return true;
                                 }
@@ -184,6 +185,75 @@ namespace BookStudyRoom
             txtPswd.Text = "";
             txtValue.Text = "";
             dropFields.selectedIndex = 0;
+        }
+
+        private void btnUpd_Click(object sender, EventArgs e)
+        {
+            if (checkFields(false))
+            {
+                conn.Open();
+                SqlCommand cmd;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                String sql = "";
+
+                sql = "update user_table set name='" + txtName.Text + "', login='" + txtLogin.Text + "', phone='" + txtPhone.Text + "', password='" + txtPswd.Text + "' where id='"+txtId.Text+"';";
+
+                cmd = new SqlCommand(sql, conn);
+
+                adapter.UpdateCommand = cmd;
+                int result = adapter.UpdateCommand.ExecuteNonQuery();
+
+                cmd.Dispose();
+                conn.Close();
+
+                this.user_tableTableAdapter.Fill(this.roombookingDataSet.user_table);
+                
+                if (result > 0)
+                {
+                    MessageBox.Show("User Updated!", "Users", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Update failed!", "Users", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if ((MessageBox.Show("Do you want to delete the user?", "Users", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                &&(txtId.Text.Length>0))
+            {
+                conn.Open();
+                SqlCommand cmd;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                String sql = "";
+
+                sql = "delete user_table where id=" + txtId.Text;
+
+                cmd = new SqlCommand(sql, conn);
+
+                adapter.DeleteCommand= cmd;
+                int result = adapter.DeleteCommand.ExecuteNonQuery();
+
+                cmd.Dispose();
+                conn.Close();
+
+                this.user_tableTableAdapter.Fill(this.roombookingDataSet.user_table);
+
+                if (result > 0)
+                {
+                    MessageBox.Show("User Deleted!", "Users", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Deletion failed!", "Users", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Operation canceled!", "Users", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
