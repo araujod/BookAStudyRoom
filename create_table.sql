@@ -8,8 +8,9 @@ use roombooking;
 
 create table user_table
 	(id			int IDENTITY(1,1) PRIMARY KEY,
-	 phone		varchar(15), --(777)123-1234
 	 name		varchar(250) NOT NULL,
+	 login		varchar(250) NOT NULL,
+	 phone		varchar(15), --(777)123-1234
 	 password	varchar(128) NOT NULL 
 	);
 
@@ -18,7 +19,7 @@ create table room_table
 	 number		varchar(15),
 	 location	varchar(15), 
 	 capacity	numeric(3) check (capacity > 0),
-	 resources TEXT
+	 resources TEXT --More than one item, like Projector, TV, White Board, Etc.
 	);
 
 create table BookedRoom_table
