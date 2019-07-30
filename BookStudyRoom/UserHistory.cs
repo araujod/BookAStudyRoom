@@ -17,8 +17,7 @@ namespace BookStudyRoom
         {
             InitializeComponent();
             dropFields.selectedIndex = 0;
-
-            String[] fields = { "id", "user_id", "room_id", "date_booked" };
+            
             SqlConnection conn = DBUtils.GetDBConnection();
 
             string sql = "SELECT id as ID, room_id as Room_ID, date_booked as Date, time_start as TimeStart, time_end as TimeEnd, members_qtt as Members FROM BookedRoom_table where user_id= " + DBUtils.currentUserID;
