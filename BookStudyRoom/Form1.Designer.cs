@@ -255,10 +255,10 @@
             this.bunifuLabel2.Location = new System.Drawing.Point(146, 255);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(68, 31);
+            this.bunifuLabel2.Size = new System.Drawing.Size(63, 31);
             this.bunifuLabel2.TabIndex = 2;
             this.bunifuLabel2.TabStop = false;
-            this.bunifuLabel2.Text = "Name";
+            this.bunifuLabel2.Text = "Login";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -404,7 +404,7 @@
             this.txtName.OnIdleState = stateProperties12;
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtName.PlaceholderText = "Enter your name";
+            this.txtName.PlaceholderText = "Enter your login";
             this.txtName.ReadOnly = false;
             this.txtName.SelectedText = "";
             this.txtName.SelectionLength = 0;
@@ -417,7 +417,7 @@
             this.txtName.TextMarginBottom = 0;
             this.txtName.TextMarginLeft = 5;
             this.txtName.TextMarginTop = 0;
-            this.txtName.TextPlaceholder = "Enter your name";
+            this.txtName.TextPlaceholder = "Enter your login";
             this.txtName.UseSystemPasswordChar = false;
             this.txtName.WordWrap = true;
             // 

@@ -23,9 +23,8 @@ namespace BookStudyRoom
 
         private void ManageUser_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'roombookingDataSet.user_table' table. You can move, or remove it, as needed.
-            this.user_tableTableAdapter.Fill(this.roombookingDataSet.user_table);           
-
+            // TODO: This line of code loads data into the 'roombookingDataSet1.user_table' table. You can move, or remove it, as needed.
+            this.user_tableTableAdapter1.Fill(this.roombookingDataSet1.user_table);   
         }
 
         private void dataGrid1_SelectionChanged(object sender, EventArgs e)
@@ -156,8 +155,9 @@ namespace BookStudyRoom
                 SqlCommand cmd;
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 String sql = "";
+                String encryptPswd = StringCipher.Encrypt(txtPswd.Text);
 
-                sql = "insert into user_table values('" + txtName.Text + "', '" + txtLogin.Text + "', '" + txtPhone.Text + "', '" + txtPswd.Text + "')";
+                sql = "insert into user_table values('" + txtName.Text + "', '" + txtLogin.Text + "', '" + txtPhone.Text + "', '" + encryptPswd + "')";
 
                 cmd = new SqlCommand(sql, conn);
 
@@ -166,10 +166,15 @@ namespace BookStudyRoom
 
                 cmd.Dispose();
                 conn.Close();
-
-                this.user_tableTableAdapter.Fill(this.roombookingDataSet.user_table);
-                dataGrid1.Rows[dataGrid1.RowCount-1].Selected = true;
-                dataGrid1.FirstDisplayedScrollingRowIndex = dataGrid1.RowCount-1;
+                this.user_tableTableAdapter1.Fill(this.roombookingDataSet1.user_table);
+               
+                if (dataGrid1.RowCount > 0)
+                {
+                    int lastRow = dataGrid1.RowCount - 1;
+                    dataGrid1.Rows[lastRow].Selected = true;
+                    dataGrid1.FirstDisplayedScrollingRowIndex = lastRow;
+                }
+               
 
                 MessageBox.Show("User Added!", "Users", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -195,8 +200,9 @@ namespace BookStudyRoom
                 SqlCommand cmd;
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 String sql = "";
+                String encryptPswd = StringCipher.Encrypt(txtPswd.Text);
 
-                sql = "update user_table set name='" + txtName.Text + "', login='" + txtLogin.Text + "', phone='" + txtPhone.Text + "', password='" + txtPswd.Text + "' where id='"+txtId.Text+"';";
+                sql = "update user_table set name='" + txtName.Text + "', login='" + txtLogin.Text + "', phone='" + txtPhone.Text + "', password='" + encryptPswd + "' where id='"+txtId.Text+"';";
 
                 cmd = new SqlCommand(sql, conn);
 
@@ -206,7 +212,7 @@ namespace BookStudyRoom
                 cmd.Dispose();
                 conn.Close();
 
-                this.user_tableTableAdapter.Fill(this.roombookingDataSet.user_table);
+                this.user_tableTableAdapter1.Fill(this.roombookingDataSet1.user_table);
                 
                 if (result > 0)
                 {
@@ -238,8 +244,8 @@ namespace BookStudyRoom
 
                 cmd.Dispose();
                 conn.Close();
-
-                this.user_tableTableAdapter.Fill(this.roombookingDataSet.user_table);
+                         
+                this.user_tableTableAdapter1.Fill(this.roombookingDataSet1.user_table);
 
                 if (result > 0)
                 {

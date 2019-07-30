@@ -10,6 +10,7 @@ namespace BookStudyRoom
 {
     class DBUtils
     {
+        public static String currentUserID = "";
         public static SqlConnection GetDBConnection()
         {            
             String connectionString = "Data Source=localhost;Initial Catalog=roombooking;Integrated Security=True";
