@@ -5,7 +5,7 @@ create database roombooking;
 go
 
 use roombooking;
-
+-- drop table user_table;
 create table user_table
 	(id			int IDENTITY(1,1) PRIMARY KEY,
 	 name		varchar(250) NOT NULL,
@@ -13,7 +13,7 @@ create table user_table
 	 phone		varchar(15), --(777)123-1234
 	 password	varchar(128) NOT NULL 
 	);
-
+-- drop table room_table;
 create table room_table
 	(id			int IDENTITY(1,1) PRIMARY KEY, 
 	 number		varchar(15),
@@ -21,7 +21,7 @@ create table room_table
 	 capacity	numeric(3) check (capacity > 0),
 	 resources TEXT --More than one item, like Projector, TV, White Board, Etc.
 	);
-
+-- drop table BookedRoom_table;
 create table BookedRoom_table
 	(id			int IDENTITY(1,1) PRIMARY KEY, 
 	 user_id	int, 

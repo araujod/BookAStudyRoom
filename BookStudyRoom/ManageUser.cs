@@ -103,7 +103,7 @@ namespace BookStudyRoom
             {
                 if(txtLogin.Text.Length>0)
                 {
-                    if(txtPhone.Text.Length==10)
+                    if((txtPhone.Text.Length==10)|| (txtPhone.Text.Length == 12))
                     {
                         if (txtPswd.Text.Length > 0)
                         {
@@ -166,6 +166,9 @@ namespace BookStudyRoom
 
                 cmd.Dispose();
                 conn.Close();
+
+                CleanFields();
+
                 this.user_tableTableAdapter1.Fill(this.roombookingDataSet1.user_table);
                
                 if (dataGrid1.RowCount > 0)
@@ -176,10 +179,16 @@ namespace BookStudyRoom
                 }
                
                 MessageBox.Show("User Added!", "Users", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
         }
 
         private void btnClean_Click(object sender, EventArgs e)
+        {
+            CleanFields();
+        }
+
+        private void CleanFields()
         {
             txtCPswd.Text = "";
             txtId.Text = "";
@@ -190,7 +199,6 @@ namespace BookStudyRoom
             txtValue.Text = "";
             dropFields.selectedIndex = 0;
         }
-
         private void btnUpd_Click(object sender, EventArgs e)
         {
             if (checkFields(false))
@@ -211,6 +219,8 @@ namespace BookStudyRoom
                 cmd.Dispose();
                 conn.Close();
 
+                CleanFields();
+
                 this.user_tableTableAdapter1.Fill(this.roombookingDataSet1.user_table);
                 
                 if (result > 0)
@@ -221,6 +231,7 @@ namespace BookStudyRoom
                 {
                     MessageBox.Show("Update failed!", "Users", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                
             }
         }
 
@@ -243,7 +254,9 @@ namespace BookStudyRoom
 
                 cmd.Dispose();
                 conn.Close();
-                         
+
+                CleanFields();
+
                 this.user_tableTableAdapter1.Fill(this.roombookingDataSet1.user_table);
 
                 if (result > 0)
@@ -254,6 +267,7 @@ namespace BookStudyRoom
                 {
                     MessageBox.Show("Deletion failed!", "Users", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                
             }
             else
             {

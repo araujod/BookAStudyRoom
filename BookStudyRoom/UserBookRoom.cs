@@ -40,7 +40,7 @@ namespace BookStudyRoom
             String sql = "";
             if (txtValue.Text.Trim().Length > 0)
             {
-                sql = "Select * from room_table where " + fields[dropFields.selectedIndex] + " = '" + txtValue.Text + "';";
+                sql = "Select * from room_table where " + fields[dropFields.selectedIndex] + " like '%" + txtValue.Text + "%';";
             }
             else
             {
@@ -57,10 +57,19 @@ namespace BookStudyRoom
                 dataGrid1.Rows.Add();
                 dataGrid1.Rows[dataGrid1.Rows.Count - 1].Cells[0].Value = reader.GetInt32(0).ToString();
                 dataGrid1.Rows[dataGrid1.Rows.Count - 1].Cells[1].Value = reader.GetString(1);
-                for(int i = 2; i<11;i++)
+                bool[] timeAvailable = GetAvailableTime(reader.GetInt32(0).ToString());
+                for (int i = 2; i<11;i++)
                 {
-                    dataGrid1.Rows[dataGrid1.Rows.Count - 1].Cells[i].Style = ON;
-                    dataGrid1.Rows[dataGrid1.Rows.Count - 1].Cells[i].Value = "ON";
+                    if (timeAvailable[i - 2])
+                    {
+                        dataGrid1.Rows[dataGrid1.Rows.Count - 1].Cells[i].Style = ON;
+                        dataGrid1.Rows[dataGrid1.Rows.Count - 1].Cells[i].Value = "ON";
+                    }
+                    else
+                    {
+                        dataGrid1.Rows[dataGrid1.Rows.Count - 1].Cells[i].Style = OFF;
+                        dataGrid1.Rows[dataGrid1.Rows.Count - 1].Cells[i].Value = "OFF";
+                    }
                 }                
             }
 
@@ -90,8 +99,8 @@ namespace BookStudyRoom
         private bool[] GetAvailableTime(String roomID)
         {
             bool[] result = GetTrueArray();
-
-            conn.Open();
+            SqlConnection connection = DBUtils.GetDBConnection();
+            connection.Open();
             SqlCommand cmd;
             SqlDataReader reader;
             String sql = "";
@@ -99,7 +108,7 @@ namespace BookStudyRoom
             
             sql = "Select * from BookedRoom_table where room_id = " + roomID + " and date_booked='" + today + "';";
             
-            cmd = new SqlCommand(sql, conn);
+            cmd = new SqlCommand(sql, connection);
 
             reader = cmd.ExecuteReader();
           
@@ -115,7 +124,7 @@ namespace BookStudyRoom
             }
 
             cmd.Dispose();
-            conn.Close();
+            connection.Close();
 
             return result;
         }

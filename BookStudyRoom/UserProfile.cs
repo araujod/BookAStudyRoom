@@ -69,7 +69,7 @@ namespace BookStudyRoom
             {
                 if (txtLogin.Text.Length > 0)
                 {
-                    if (txtPhone.Text.Length == 10)
+                    if ((txtPhone.Text.Length == 10)||(txtPhone.Text.Length == 12))
                     {
                         if (txtPswd.Text.Length > 0)
                         {
