@@ -175,7 +175,6 @@ namespace BookStudyRoom
                     dataGrid1.FirstDisplayedScrollingRowIndex = lastRow;
                 }
                
-
                 MessageBox.Show("User Added!", "Users", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

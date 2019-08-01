@@ -49,6 +49,10 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties24 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtResources = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
@@ -81,6 +85,8 @@
             this.lbl6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lbl7 = new Bunifu.UI.WinForms.BunifuLabel();
             this.lbl8 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtMembers = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,7 +167,7 @@
             this.txtResources.PasswordChar = '\0';
             this.txtResources.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtResources.PlaceholderText = "Resources";
-            this.txtResources.ReadOnly = false;
+            this.txtResources.ReadOnly = true;
             this.txtResources.SelectedText = "";
             this.txtResources.SelectionLength = 0;
             this.txtResources.SelectionStart = 0;
@@ -204,7 +210,7 @@
             this.txtCapacity.IconRight = null;
             this.txtCapacity.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCapacity.Lines = new string[0];
-            this.txtCapacity.Location = new System.Drawing.Point(147, 241);
+            this.txtCapacity.Location = new System.Drawing.Point(147, 238);
             this.txtCapacity.MaxLength = 32767;
             this.txtCapacity.MinimumSize = new System.Drawing.Size(100, 35);
             this.txtCapacity.Modified = false;
@@ -233,7 +239,7 @@
             this.txtCapacity.PasswordChar = '\0';
             this.txtCapacity.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtCapacity.PlaceholderText = "Room Capacity";
-            this.txtCapacity.ReadOnly = false;
+            this.txtCapacity.ReadOnly = true;
             this.txtCapacity.SelectedText = "";
             this.txtCapacity.SelectionLength = 0;
             this.txtCapacity.SelectionStart = 0;
@@ -276,7 +282,7 @@
             this.txtBuilding.IconRight = null;
             this.txtBuilding.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBuilding.Lines = new string[0];
-            this.txtBuilding.Location = new System.Drawing.Point(147, 200);
+            this.txtBuilding.Location = new System.Drawing.Point(147, 195);
             this.txtBuilding.MaxLength = 32767;
             this.txtBuilding.MinimumSize = new System.Drawing.Size(100, 35);
             this.txtBuilding.Modified = false;
@@ -305,7 +311,7 @@
             this.txtBuilding.PasswordChar = '\0';
             this.txtBuilding.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtBuilding.PlaceholderText = "Building";
-            this.txtBuilding.ReadOnly = false;
+            this.txtBuilding.ReadOnly = true;
             this.txtBuilding.SelectedText = "";
             this.txtBuilding.SelectionLength = 0;
             this.txtBuilding.SelectionStart = 0;
@@ -348,7 +354,7 @@
             this.txtNumber.IconRight = null;
             this.txtNumber.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNumber.Lines = new string[0];
-            this.txtNumber.Location = new System.Drawing.Point(147, 156);
+            this.txtNumber.Location = new System.Drawing.Point(147, 153);
             this.txtNumber.MaxLength = 32767;
             this.txtNumber.MinimumSize = new System.Drawing.Size(100, 35);
             this.txtNumber.Modified = false;
@@ -377,7 +383,7 @@
             this.txtNumber.PasswordChar = '\0';
             this.txtNumber.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtNumber.PlaceholderText = "Room Number";
-            this.txtNumber.ReadOnly = false;
+            this.txtNumber.ReadOnly = true;
             this.txtNumber.SelectedText = "";
             this.txtNumber.SelectionLength = 0;
             this.txtNumber.SelectionStart = 0;
@@ -480,7 +486,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label4.Location = new System.Drawing.Point(61, 205);
+            this.label4.Location = new System.Drawing.Point(61, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 24);
             this.label4.TabIndex = 41;
@@ -490,7 +496,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label3.Location = new System.Drawing.Point(60, 247);
+            this.label3.Location = new System.Drawing.Point(60, 244);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 24);
             this.label3.TabIndex = 40;
@@ -500,7 +506,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label1.Location = new System.Drawing.Point(8, 161);
+            this.label1.Location = new System.Drawing.Point(8, 158);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 24);
             this.label1.TabIndex = 39;
@@ -540,6 +546,7 @@
             this.btnConfirm.Size = new System.Drawing.Size(181, 41);
             this.btnConfirm.TabIndex = 44;
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
@@ -585,7 +592,7 @@
             this.cb0.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cb0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb0.CustomCheckmarkImage = null;
-            this.cb0.Location = new System.Drawing.Point(64, 310);
+            this.cb0.Location = new System.Drawing.Point(75, 335);
             this.cb0.MinimumSize = new System.Drawing.Size(17, 17);
             this.cb0.Name = "cb0";
             this.cb0.OnCheck.BorderColor = System.Drawing.Color.Green;
@@ -626,7 +633,7 @@
             this.lbl0.AutoEllipsis = false;
             this.lbl0.CursorType = null;
             this.lbl0.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl0.Location = new System.Drawing.Point(99, 308);
+            this.lbl0.Location = new System.Drawing.Point(110, 333);
             this.lbl0.Name = "lbl0";
             this.lbl0.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl0.Size = new System.Drawing.Size(60, 34);
@@ -653,7 +660,7 @@
             this.cb1.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cb1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb1.CustomCheckmarkImage = null;
-            this.cb1.Location = new System.Drawing.Point(64, 360);
+            this.cb1.Location = new System.Drawing.Point(75, 385);
             this.cb1.MinimumSize = new System.Drawing.Size(17, 17);
             this.cb1.Name = "cb1";
             this.cb1.OnCheck.BorderColor = System.Drawing.Color.Green;
@@ -687,13 +694,14 @@
             this.cb1.TabIndex = 45;
             this.cb1.ThreeState = false;
             this.cb1.ToolTipText = null;
+            this.cb1.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.cb0_CheckedChanged);
             // 
             // lbl1
             // 
             this.lbl1.AutoEllipsis = false;
             this.lbl1.CursorType = null;
             this.lbl1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(99, 358);
+            this.lbl1.Location = new System.Drawing.Point(110, 383);
             this.lbl1.Name = "lbl1";
             this.lbl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl1.Size = new System.Drawing.Size(60, 34);
@@ -720,7 +728,7 @@
             this.cb2.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cb2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb2.CustomCheckmarkImage = null;
-            this.cb2.Location = new System.Drawing.Point(64, 412);
+            this.cb2.Location = new System.Drawing.Point(75, 437);
             this.cb2.MinimumSize = new System.Drawing.Size(17, 17);
             this.cb2.Name = "cb2";
             this.cb2.OnCheck.BorderColor = System.Drawing.Color.Green;
@@ -754,13 +762,14 @@
             this.cb2.TabIndex = 45;
             this.cb2.ThreeState = false;
             this.cb2.ToolTipText = null;
+            this.cb2.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.cb0_CheckedChanged);
             // 
             // lbl2
             // 
             this.lbl2.AutoEllipsis = false;
             this.lbl2.CursorType = null;
             this.lbl2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(99, 410);
+            this.lbl2.Location = new System.Drawing.Point(110, 435);
             this.lbl2.Name = "lbl2";
             this.lbl2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl2.Size = new System.Drawing.Size(60, 34);
@@ -787,7 +796,7 @@
             this.cb3.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cb3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb3.CustomCheckmarkImage = null;
-            this.cb3.Location = new System.Drawing.Point(269, 308);
+            this.cb3.Location = new System.Drawing.Point(280, 333);
             this.cb3.MinimumSize = new System.Drawing.Size(17, 17);
             this.cb3.Name = "cb3";
             this.cb3.OnCheck.BorderColor = System.Drawing.Color.Green;
@@ -821,6 +830,7 @@
             this.cb3.TabIndex = 45;
             this.cb3.ThreeState = false;
             this.cb3.ToolTipText = null;
+            this.cb3.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.cb0_CheckedChanged);
             // 
             // cb4
             // 
@@ -840,7 +850,7 @@
             this.cb4.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cb4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb4.CustomCheckmarkImage = null;
-            this.cb4.Location = new System.Drawing.Point(269, 358);
+            this.cb4.Location = new System.Drawing.Point(280, 383);
             this.cb4.MinimumSize = new System.Drawing.Size(17, 17);
             this.cb4.Name = "cb4";
             this.cb4.OnCheck.BorderColor = System.Drawing.Color.Green;
@@ -874,6 +884,7 @@
             this.cb4.TabIndex = 45;
             this.cb4.ThreeState = false;
             this.cb4.ToolTipText = null;
+            this.cb4.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.cb0_CheckedChanged);
             // 
             // cb5
             // 
@@ -893,7 +904,7 @@
             this.cb5.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cb5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb5.CustomCheckmarkImage = null;
-            this.cb5.Location = new System.Drawing.Point(269, 410);
+            this.cb5.Location = new System.Drawing.Point(280, 435);
             this.cb5.MinimumSize = new System.Drawing.Size(17, 17);
             this.cb5.Name = "cb5";
             this.cb5.OnCheck.BorderColor = System.Drawing.Color.Green;
@@ -927,13 +938,14 @@
             this.cb5.TabIndex = 45;
             this.cb5.ThreeState = false;
             this.cb5.ToolTipText = null;
+            this.cb5.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.cb0_CheckedChanged);
             // 
             // lbl3
             // 
             this.lbl3.AutoEllipsis = false;
             this.lbl3.CursorType = null;
             this.lbl3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(304, 306);
+            this.lbl3.Location = new System.Drawing.Point(315, 331);
             this.lbl3.Name = "lbl3";
             this.lbl3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl3.Size = new System.Drawing.Size(60, 34);
@@ -947,7 +959,7 @@
             this.lbl4.AutoEllipsis = false;
             this.lbl4.CursorType = null;
             this.lbl4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.Location = new System.Drawing.Point(304, 356);
+            this.lbl4.Location = new System.Drawing.Point(315, 381);
             this.lbl4.Name = "lbl4";
             this.lbl4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl4.Size = new System.Drawing.Size(60, 34);
@@ -961,7 +973,7 @@
             this.lbl5.AutoEllipsis = false;
             this.lbl5.CursorType = null;
             this.lbl5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl5.Location = new System.Drawing.Point(304, 408);
+            this.lbl5.Location = new System.Drawing.Point(315, 433);
             this.lbl5.Name = "lbl5";
             this.lbl5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl5.Size = new System.Drawing.Size(60, 34);
@@ -988,7 +1000,7 @@
             this.cb6.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cb6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb6.CustomCheckmarkImage = null;
-            this.cb6.Location = new System.Drawing.Point(508, 308);
+            this.cb6.Location = new System.Drawing.Point(519, 333);
             this.cb6.MinimumSize = new System.Drawing.Size(17, 17);
             this.cb6.Name = "cb6";
             this.cb6.OnCheck.BorderColor = System.Drawing.Color.Green;
@@ -1022,6 +1034,7 @@
             this.cb6.TabIndex = 45;
             this.cb6.ThreeState = false;
             this.cb6.ToolTipText = null;
+            this.cb6.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.cb0_CheckedChanged);
             // 
             // cb7
             // 
@@ -1041,7 +1054,7 @@
             this.cb7.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cb7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb7.CustomCheckmarkImage = null;
-            this.cb7.Location = new System.Drawing.Point(508, 358);
+            this.cb7.Location = new System.Drawing.Point(519, 383);
             this.cb7.MinimumSize = new System.Drawing.Size(17, 17);
             this.cb7.Name = "cb7";
             this.cb7.OnCheck.BorderColor = System.Drawing.Color.Green;
@@ -1075,6 +1088,7 @@
             this.cb7.TabIndex = 45;
             this.cb7.ThreeState = false;
             this.cb7.ToolTipText = null;
+            this.cb7.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.cb0_CheckedChanged);
             // 
             // cb8
             // 
@@ -1094,7 +1108,7 @@
             this.cb8.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.cb8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb8.CustomCheckmarkImage = null;
-            this.cb8.Location = new System.Drawing.Point(508, 410);
+            this.cb8.Location = new System.Drawing.Point(519, 435);
             this.cb8.MinimumSize = new System.Drawing.Size(17, 17);
             this.cb8.Name = "cb8";
             this.cb8.OnCheck.BorderColor = System.Drawing.Color.Green;
@@ -1128,13 +1142,14 @@
             this.cb8.TabIndex = 45;
             this.cb8.ThreeState = false;
             this.cb8.ToolTipText = null;
+            this.cb8.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.cb0_CheckedChanged);
             // 
             // lbl6
             // 
             this.lbl6.AutoEllipsis = false;
             this.lbl6.CursorType = null;
             this.lbl6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl6.Location = new System.Drawing.Point(543, 306);
+            this.lbl6.Location = new System.Drawing.Point(554, 331);
             this.lbl6.Name = "lbl6";
             this.lbl6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl6.Size = new System.Drawing.Size(60, 34);
@@ -1148,7 +1163,7 @@
             this.lbl7.AutoEllipsis = false;
             this.lbl7.CursorType = null;
             this.lbl7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl7.Location = new System.Drawing.Point(543, 356);
+            this.lbl7.Location = new System.Drawing.Point(554, 381);
             this.lbl7.Name = "lbl7";
             this.lbl7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl7.Size = new System.Drawing.Size(60, 34);
@@ -1162,7 +1177,7 @@
             this.lbl8.AutoEllipsis = false;
             this.lbl8.CursorType = null;
             this.lbl8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl8.Location = new System.Drawing.Point(543, 408);
+            this.lbl8.Location = new System.Drawing.Point(554, 433);
             this.lbl8.Name = "lbl8";
             this.lbl8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl8.Size = new System.Drawing.Size(60, 34);
@@ -1170,6 +1185,88 @@
             this.lbl8.Text = "17:00";
             this.lbl8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lbl8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label6.Location = new System.Drawing.Point(60, 286);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 24);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Members";
+            // 
+            // txtMembers
+            // 
+            this.txtMembers.AcceptsReturn = false;
+            this.txtMembers.AcceptsTab = false;
+            this.txtMembers.AnimationSpeed = 200;
+            this.txtMembers.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtMembers.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtMembers.BackColor = System.Drawing.Color.Transparent;
+            this.txtMembers.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtMembers.BackgroundImage")));
+            this.txtMembers.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtMembers.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.txtMembers.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtMembers.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtMembers.BorderRadius = 15;
+            this.txtMembers.BorderThickness = 2;
+            this.txtMembers.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtMembers.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMembers.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 14F);
+            this.txtMembers.DefaultText = "";
+            this.txtMembers.FillColor = System.Drawing.Color.White;
+            this.txtMembers.HideSelection = true;
+            this.txtMembers.IconLeft = null;
+            this.txtMembers.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMembers.IconPadding = 10;
+            this.txtMembers.IconRight = null;
+            this.txtMembers.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMembers.Lines = new string[0];
+            this.txtMembers.Location = new System.Drawing.Point(147, 280);
+            this.txtMembers.MaxLength = 32767;
+            this.txtMembers.MinimumSize = new System.Drawing.Size(100, 35);
+            this.txtMembers.Modified = false;
+            this.txtMembers.Multiline = false;
+            this.txtMembers.Name = "txtMembers";
+            stateProperties21.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties21.FillColor = System.Drawing.Color.Empty;
+            stateProperties21.ForeColor = System.Drawing.Color.Empty;
+            stateProperties21.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtMembers.OnActiveState = stateProperties21;
+            stateProperties22.BorderColor = System.Drawing.Color.Empty;
+            stateProperties22.FillColor = System.Drawing.Color.White;
+            stateProperties22.ForeColor = System.Drawing.Color.Empty;
+            stateProperties22.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtMembers.OnDisabledState = stateProperties22;
+            stateProperties23.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties23.FillColor = System.Drawing.Color.Empty;
+            stateProperties23.ForeColor = System.Drawing.Color.Empty;
+            stateProperties23.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtMembers.OnHoverState = stateProperties23;
+            stateProperties24.BorderColor = System.Drawing.Color.Silver;
+            stateProperties24.FillColor = System.Drawing.Color.White;
+            stateProperties24.ForeColor = System.Drawing.Color.Empty;
+            stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtMembers.OnIdleState = stateProperties24;
+            this.txtMembers.PasswordChar = '\0';
+            this.txtMembers.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtMembers.PlaceholderText = "Members Quantity";
+            this.txtMembers.ReadOnly = false;
+            this.txtMembers.SelectedText = "";
+            this.txtMembers.SelectionLength = 0;
+            this.txtMembers.SelectionStart = 0;
+            this.txtMembers.ShortcutsEnabled = true;
+            this.txtMembers.Size = new System.Drawing.Size(200, 36);
+            this.txtMembers.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
+            this.txtMembers.TabIndex = 36;
+            this.txtMembers.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMembers.TextMarginBottom = 0;
+            this.txtMembers.TextMarginLeft = 5;
+            this.txtMembers.TextMarginTop = 0;
+            this.txtMembers.TextPlaceholder = "Members Quantity";
+            this.txtMembers.UseSystemPasswordChar = false;
+            this.txtMembers.WordWrap = true;
             // 
             // BookRoom
             // 
@@ -1198,11 +1295,13 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.txtResources);
+            this.Controls.Add(this.txtMembers);
             this.Controls.Add(this.txtCapacity);
             this.Controls.Add(this.txtBuilding);
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -1253,5 +1352,7 @@
         private Bunifu.UI.WinForms.BunifuLabel lbl6;
         private Bunifu.UI.WinForms.BunifuLabel lbl7;
         private Bunifu.UI.WinForms.BunifuLabel lbl8;
+        private System.Windows.Forms.Label label6;
+        private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtMembers;
     }
 }

@@ -73,9 +73,51 @@ namespace BookStudyRoom
             if (e.RowIndex > -1)
             {
                 string roomID = dataGrid1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                BookRoom bookRoom = new BookRoom(roomID);                
+                bool[] test = GetAvailableTime(roomID);
+                BookRoom bookRoom = new BookRoom(roomID, test);                
                 bookRoom.ShowDialog();
             }
+        }
+        private bool[] GetTrueArray()
+        {
+            bool[] res = new bool[9];
+            for(int i=0; i<9; i++)
+            {
+                res[i] = true;
+            }
+            return res;
+        }
+        private bool[] GetAvailableTime(String roomID)
+        {
+            bool[] result = GetTrueArray();
+
+            conn.Open();
+            SqlCommand cmd;
+            SqlDataReader reader;
+            String sql = "";
+            String today = DateTime.Today.ToString("yyyy-MM-dd");
+            
+            sql = "Select * from BookedRoom_table where room_id = " + roomID + " and date_booked='" + today + "';";
+            
+            cmd = new SqlCommand(sql, conn);
+
+            reader = cmd.ExecuteReader();
+          
+            while (reader.Read())
+            {
+                Int16 start_time= reader.GetInt16(4);
+                Int16 end_time = reader.GetInt16(5);
+                
+                //Time starts at 9am
+                result[(start_time-9)] = false;//It means its being used
+                result[(end_time - 10)] = false;//Because it can have a 2h end time.
+                
+            }
+
+            cmd.Dispose();
+            conn.Close();
+
+            return result;
         }
     }
 }
